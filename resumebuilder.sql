@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 22, 2026 at 07:27 AM
+-- Generation Time: Jun 22, 2026 at 05:20 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -36,19 +36,6 @@ CREATE TABLE `educations` (
   `ended` varchar(250) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Dumping data for table `educations`
---
-
-INSERT INTO `educations` (`id`, `resume_id`, `course`, `institute`, `started`, `ended`) VALUES
-(2, 2, 'Complete Zoology', 'MErto', 'December 2022', 'January'),
-(3, 2, 'art class', 'MErto', 'October 3', 'Currently'),
-(26, 14, 'Computer Science', 'Aston University', 'January 3', 'February 3'),
-(28, 18, 'Diploma In System Creator ', 'Metro IT', 'Feb 2023', 'Fe 2024'),
-(29, 18, 'BSC.Zoology', 'Yangon University of Distance Education', '2023', '2026'),
-(30, 18, 'Professional Web Developer Course I', 'Fairway Technology', 'Feb 2025', 'April 2025'),
-(31, 18, 'Professional Web Developer Course II', 'Fairway Technology', 'Dec 2025', 'Feb 2026');
-
 -- --------------------------------------------------------
 
 --
@@ -64,15 +51,6 @@ CREATE TABLE `experiences` (
   `started` varchar(250) NOT NULL,
   `ended` varchar(250) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `experiences`
---
-
-INSERT INTO `experiences` (`id`, `resume_id`, `position`, `company`, `job_desc`, `started`, `ended`) VALUES
-(11, 2, 'Java Developer', 'Micro Company', 'Checking\r\n', 'December 2022', 'Currently'),
-(12, 2, 'Python Develper', 'abs company', 'code check', 'October 3', 'January'),
-(35, 14, 'Java Developer', 'Microsoft Company', 'Assistance', 'December 2022', 'Currently');
 
 -- --------------------------------------------------------
 
@@ -102,16 +80,6 @@ CREATE TABLE `resumes` (
   `font` varchar(250) NOT NULL DEFAULT '''Poppins'', sans-serif'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Dumping data for table `resumes`
---
-
-INSERT INTO `resumes` (`id`, `user_id`, `full_name`, `email_id`, `mobile_no`, `dob`, `gender`, `religion`, `nationality`, `marital_status`, `hobbies`, `languages`, `address`, `objective`, `slug`, `updated_at`, `resume_title`, `background`, `font`) VALUES
-(2, 1, 'Nyan Htet MIn', 'nyanhtetmin3@gmail.com', '09447490586', '2025-12-29', 'Male', 'Buddhist', 'Myanmar', 'Single', 'reading', 'English', '12bahan', 'a widely-used, open-source server-side scripting language for web development', '12096q6f73v00_5k9d', 1765824012, 'Java Developer', 'tile12.png', '\'Gloria Hallelujah\', cursive'),
-(14, 2, 'Min Win Mhan Hein', 'minwinmhanhein2005@gmail.com', '0973456729', '2005-09-15', 'Male', 'Buddhist', 'Mon', 'Divorced', 'masturbation', 'English & Japanese', 'a nee gar street', 'Superman', 'q_56smz5o97n5gh9yc', 1766945822, 'Java Developer', 'tile12.png', '\'Poppins\', sans-serif'),
-(17, 3, 'Nyan htet Min', 'nyanhtetmin3@gmail.com', '+959447490586', '2004-12-29', 'Male', 'Buddhist', 'Myanmar', 'Single', 'Travel', 'English & Japanese', 'Yangon', 'I want to be Project Manager\r\n', '1ja71_7k3h2w7eqf1y', 1779111281, 'Java Developer', 'tile22.png', '\'Poppins\', sans-serif'),
-(18, 4, 'Nyan htet Min', 'nyanhtetmin3@gmail.com', '+959447490586', '2004-12-29', 'Male', 'Buddhist', 'Myanmar', 'Single', 'Traveling', 'English & Japanese&Myanmar', 'Yangon', 'I want to Senior Developer ', 'fyn6c_75v37ljbiz02', 1782071132, 'Junior Web Developer', '\"', '\'Poppins\', sans-serif');
-
 -- --------------------------------------------------------
 
 --
@@ -123,15 +91,6 @@ CREATE TABLE `skills` (
   `resume_id` int(11) NOT NULL,
   `skill` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `skills`
---
-
-INSERT INTO `skills` (`id`, `resume_id`, `skill`) VALUES
-(2, 2, 'php'),
-(3, 2, 'Java'),
-(26, 14, 'Java & Python & PHP & JavaScript');
 
 -- --------------------------------------------------------
 
@@ -145,13 +104,6 @@ CREATE TABLE `users` (
   `email_id` varchar(250) NOT NULL,
   `password` varchar(250) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `users`
---
-
-INSERT INTO `users` (`id`, `full_name`, `email_id`, `password`) VALUES
-(4, 'Nyan Htet Min', 'nyanhtetmin3@gmail.com', 'ea18c18691ed877962441124307d0835');
 
 --
 -- Indexes for dumped tables
@@ -200,31 +152,31 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `educations`
 --
 ALTER TABLE `educations`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `experiences`
 --
 ALTER TABLE `experiences`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `resumes`
 --
 ALTER TABLE `resumes`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `skills`
 --
 ALTER TABLE `skills`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
