@@ -1,0 +1,35 @@
+<?php
+require '../asstes/classes/database.class.php';
+require '../asstes/classes/function.class.php';
+
+if ($_GET) {
+    $post = $_GET;
+
+
+    if ($post['id'] && $post['resume_id']) {
+    
+        try {
+            $query="DELETE FROM experiences WHERE id={$post['id']} AND resume_id={$post['resume_id']}";
+            
+
+        
+            $db->query($query);
+            
+
+
+            $fn->setAlert('Experience deleted !');
+            $fn->redirect('../updateresume.php?resume='.$post['slug']);
+
+
+        } catch (Exception $error) {
+            $fn->setError($error->getMessage());
+            $fn->redirect('../updateresume.php?resume='.$post['slug']);
+        }
+
+    } else {
+        $fn->setError('Please fill the form');
+        $fn->redirect('../updateresume.php?resume='.$post['slug']);
+    }
+} else {
+    $fn->redirect('../updateresume.php?resume='.$post['slug']);
+}
