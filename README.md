@@ -112,7 +112,11 @@ git clone https://github.com/your-username/ResumeForge.git
 resumebuilder
 ```
 
-4. Select the `resumebuilder` database, click the **"SQL"** tab, and run the following SQL to create all required tables:
+4. Select the `resumebuilder` database and click the **"Import"** tab.
+5. Click **"Choose File"** and select the `resumebuilder.sql` file located in the root of this project.
+6. Click **"Import"** (or **"Go"**) at the bottom.
+
+> **Alternatively**, you can click the **"SQL"** tab and paste the following code:
 
 ```sql
 -- Users table
